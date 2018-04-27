@@ -1,0 +1,42 @@
+<!--
+{
+            "Type": "outgas_v",
+            "Unit": "mbar/s",
+            "Max": 1e-9,
+            "Min": 1e-11,
+            "Description": "Outgasig rate of vessel only",
+            "Value": [
+              -1.9792443239907698e-9,
+              -6.376579264610882e-10,
+              -2.852796332497576e-10
+            ],
+            "Med": 5.05e-10,
+            "Deviation": [
+              -4.919295787811279,
+              -2.2626891136169434,
+              -1.5649101734161377
+            ]
+          }
+-->
+<h2>{{Quant}}</h2>
+{{#Values}}
+<p>
+  <b>{{Description}}</b>
+  Type: {{Type}} Unit {{Unit}}  Min: {{Min}} Med: {{Med}}Max: {{Max}}
+    <p>
+      {{#Value}}
+      Value: {{.}}
+      {{/Value}}
+    </p>
+    <p>
+      {{#Deviation}}
+      Deviation: {{.}}
+      {{/Deviation}}
+    </p>
+    <p>
+      {{#Rating}}
+      <b class='r_{{.}}'>Rating</b>
+      {{/Rating}}
+    </p>
+</p>
+{{/Values}}
