@@ -18,17 +18,15 @@
             ]
           }
 -->
-<h2>{{Quant}}</h2> {{#Values}}
-
-<div class="row">
-    <div class="col-4">
+<h2>{{Quant}}</h2>
+{{#Values}}
+<div class="row m-2 p-2 bg-light">
+    <div class="col-4 ">
         <ul class="list-group">
-            <li class="list-group-item">{{Description}}</li>
+            <li class="list-group-item active"><b>{{Description}}</b></li>
             <li class="list-group-item">Type: {{Type}}</li>
             <li class="list-group-item">Unit: {{Unit}}</li>
-            <li class="list-group-item">Min: {{Min}}</li>
-            <li class="list-group-item">Med: {{Med}}</li>
-            <li class="list-group-item">Max: {{Max}}</li>
+            <li class="list-group-item">Min: {{Min}} Med: {{Med}} Max: {{Max}}</li>
         </ul>
     </div>
     <div class="col-3">
@@ -49,7 +47,7 @@
         <ul class="list-group">
             {{#Rating}}
             <li class="list-group-item">
-            <span class="alert r_{{.}}">Rating</span>
+                <i><span class="badge-pill r_{{.}}">rating: {{.}} [0 ... 9]</span></i>
             </li>
             {{/Rating}}
         </ul>
