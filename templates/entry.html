@@ -18,25 +18,41 @@
             ]
           }
 -->
-<h2>{{Quant}}</h2>
-{{#Values}}
-<p>
-  <b>{{Description}}</b>
-  Type: {{Type}} Unit {{Unit}}  Min: {{Min}} Med: {{Med}}Max: {{Max}}
-    <p>
-      {{#Value}}
-      Value: {{.}}
-      {{/Value}}
-    </p>
-    <p>
-      {{#Deviation}}
-      Deviation: {{.}}
-      {{/Deviation}}
-    </p>
-    <p>
-      {{#Rating}}
-      <b class='r_{{.}}'>Rating</b>
-      {{/Rating}}
-    </p>
-</p>
+<h2>{{Quant}}</h2> {{#Values}}
+
+<div class="row">
+    <div class="col-4">
+        <ul class="list-group">
+            <li class="list-group-item">{{Description}}</li>
+            <li class="list-group-item">Type: {{Type}}</li>
+            <li class="list-group-item">Unit: {{Unit}}</li>
+            <li class="list-group-item">Min: {{Min}}</li>
+            <li class="list-group-item">Med: {{Med}}</li>
+            <li class="list-group-item">Max: {{Max}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <ul class="list-group">
+            {{#Value}}
+            <li class="list-group-item">Value: {{.}} </li>
+            {{/Value}}
+        </ul>
+    </div>
+    <div class="col-3">
+        <ul class="list-group">
+            {{#Deviation}}
+            <li class="list-group-item">Deviation: {{.}} </li>
+            {{/Deviation}}
+        </ul>
+    </div>
+    <div class="col-2">
+        <ul class="list-group">
+            {{#Rating}}
+            <li class="list-group-item">
+            <span class="alert r_{{.}}">Rating</span>
+            </li>
+            {{/Rating}}
+        </ul>
+    </div>
+</div>
 {{/Values}}
