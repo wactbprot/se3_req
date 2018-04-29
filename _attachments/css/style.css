@@ -31,3 +31,10 @@ body {
 .r_9 {
     background-color:#f20202
 }
+
+.slider {
+    border: none;
+   height: 10px;
+   width: 80%;
+   border-radius: 50%;
+}

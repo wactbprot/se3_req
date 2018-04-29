@@ -18,14 +18,13 @@
             ]
           }
 -->
-<h2>{{Quant}}</h2>
 {{#Values}}
-<div class="row m-2 p-2 bg-light">
-    <div class="col-4 ">
-        <ul class="list-group">
-            <li class="list-group-item active"><b>{{Description}}</b></li>
-            <li class="list-group-item">Type: {{Type}}</li>
-            <li class="list-group-item">Unit: {{Unit}}</li>
+<div class="row m-3 p-2 bg-light">
+    <div class="col-3 ">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item active"><b>{{Quant}}</b></li>
+            <li class="list-group-item">{{Description}}</li>
+            <li class="list-group-item">Type: {{Type}} Unit: {{Unit}}</li>
             <li class="list-group-item">Min: {{Min}} Med: {{Med}} Max: {{Max}}</li>
         </ul>
     </div>
@@ -39,15 +38,17 @@
     <div class="col-3">
         <ul class="list-group">
             {{#Deviation}}
-            <li class="list-group-item">Deviation: {{.}} </li>
+            <li class="list-group-item">Deviation: {{.}}
+            </li>
             {{/Deviation}}
         </ul>
     </div>
-    <div class="col-2">
+    <div class="col-3">
         <ul class="list-group">
             {{#Rating}}
             <li class="list-group-item">
-                <i><span class="badge-pill r_{{.}}">rating: {{.}} [0 ... 9]</span></i>
+                <i><span class="badge-pill r_{{.}}">{{.}}</span></i>
+                <input type="range" min="0" max="9" value="{{.}}" class="slider">
             </li>
             {{/Rating}}
         </ul>
