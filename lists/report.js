@@ -17,7 +17,9 @@ function(head, req) {
     }
     if(doc && doc.State && doc.State.Check){
         var values = doc.State.Check.Values;
-        send(mustache.to_html(head, doc));
+
+        var id = doc._id;
+        send(mustache.to_html(head, {"id": id}));
 
         for(quant in values){
             send(mustache.to_html(entry, {"Quant":quant, "Values":values[quant]}));

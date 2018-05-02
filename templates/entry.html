@@ -1,48 +1,31 @@
-<!--
-{
-            "Type": "outgas_v",
-            "Unit": "mbar/s",
-            "Max": 1e-9,
-            "Min": 1e-11,
-            "Description": "Outgasig rate of vessel only",
-            "Value": [
-              -1.9792443239907698e-9,
-              -6.376579264610882e-10,
-              -2.852796332497576e-10
-            ],
-            "Med": 5.05e-10,
-            "Deviation": [
-              -4.919295787811279,
-              -2.2626891136169434,
-              -1.5649101734161377
-            ]
-          }
--->
 {{#Values}}
-<div class="row m-3 p-2 bg-light">
-    <div class="col-3 ">
+<div class="row m-3 p-3 bg-light">
+    <div class="col-3">
         <ul class="list-group list-group-flush">
             <li class="list-group-item active"><b>{{Quant}}</b></li>
-            <li class="list-group-item">{{Description}}</li>
-            <li class="list-group-item">Type: {{Type}} Unit: {{Unit}}</li>
-            <li class="list-group-item">Min: {{Min}} Med: {{Med}} Max: {{Max}}</li>
+            <li class="list-group-item"><b>Description: </b>{{Description}}</li>
+            <li class="list-group-item"><b>Type: </b>{{Type}}</li>
+            <li class="list-group-item"><b>Unit: </b>{{Unit}}</li>
+            <li class="list-group-item"><b>Min: </b>{{Min}}</li>
+            <li class="list-group-item"><b>Max: </b>{{Max}}</li>
         </ul>
     </div>
+    <div class="col-3">
+        <ul class="list-group">
+            {{#Date}}
+            <li class="list-group-item">{{.}} </li>
+            {{/Date}}
+        </ul>
+    </div>
+
     <div class="col-3">
         <ul class="list-group">
             {{#Value}}
-            <li class="list-group-item">Value: {{.}} </li>
+            <li class="list-group-item"><b>Value:  </b>{{.}} </li>
             {{/Value}}
         </ul>
     </div>
-    <div class="col-3">
-        <ul class="list-group">
-            {{#Deviation}}
-            <li class="list-group-item">Deviation: {{.}}
-            </li>
-            {{/Deviation}}
-        </ul>
-    </div>
+
     <div class="col-3">
         <ul class="list-group">
             {{#Rating}}
